@@ -8,7 +8,7 @@ class ChessBoard:
         for n in range(8):
             row = []
             for i in range(8):
-                row.append('♕')
+                row.append(' ')
             self.board.append(row)
 b = ChessBoard()
 
