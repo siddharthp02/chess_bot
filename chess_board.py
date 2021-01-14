@@ -20,7 +20,7 @@ def display_board(board):
     print(' ---------------------------------')
     print('   A   B   C   D   E   F   G   H')
 
-display_board(b.board) #- to display board
+#display_board(b.board) - to display board
 
 class Pieces:
     def __init__(self):
@@ -57,7 +57,7 @@ pieces = Pieces()
 def place_piece(board,piece,row,column):
     board[row][columns[column]]=piece
     
-'''
+'''this is the format:
 place_piece(b.board,white_pieces,'pawn',2,'d')
 display_board(b.board)
 '''
