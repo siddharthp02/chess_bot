@@ -2,6 +2,7 @@
 white_pieces = {'king':'♔','queen':'♕','bishop':'♗','rook':'♖','knight':'♘','pawn':'♙'}
 black_pieces = {'king':'♚','queen':'♛','bishop':'♝','rook':'♜','knight':'♞','pawn':'♟︎'}
 columns = {'a':1,'b':2,'c':3,'d':4,'e':5,'f':6,'g':7,'h':8}
+
 class ChessBoard:
     def __init__(self):
         self.board = ['#'] 
@@ -20,7 +21,7 @@ def display_board(board):
     print(' ---------------------------------')
     print('   A   B   C   D   E   F   G   H')
 
-#display_board(b.board) - to display board
+#display_board(b.board) g- to display board
 
 class Pieces:
     def __init__(self):
@@ -58,7 +59,7 @@ def place_piece(board,piece,row,column):
     board[row][columns[column]]=piece
     
 '''this is the format:
-place_piece(b.board,white_pieces,'pawn',2,'d')
+place_piece(b.board,pieces.white_pawns[0],2,'d')
 display_board(b.board)
 '''
 def reset_board(board):
@@ -91,4 +92,16 @@ def reset_board(board):
 reset_board(b.board)
 display_board(b.board)
 
+white_acronyms= {'p':pieces.white_pawns,'k':pieces.white_kings,'q':pieces.white_queens,'b':pieces.white_bishops,'n':pieces.white_knights,'r':pieces.white_rooks}
+black_acronyms= {'p':pieces.black_pawns,'k':pieces.black_kings,'q':pieces.black_queens,'b':pieces.black_bishops,'n':pieces.black_knights,'r':pieces.black_rooks}
+#ERRORS HERE IN THIS FUNCTION IDK WHAT IS IT YET GOTTA CORRECT
+def ask_position_white():
+    ans = '#'
+    while ans[0] not in set(white_acronyms.keys()) or ans[1] not in set(columns.values()) or int(ans[2]) not in range(1,9) :
+        ans = input('enter the position:')
+    piece_selected = ans[0]
 
+    column_selected = ans[2]
+    row_selected = int(a[2])
+    place_piece(b.board,white_acronyms[ans[0]][0],row_selected,column_selected)
+ask_position_white()
